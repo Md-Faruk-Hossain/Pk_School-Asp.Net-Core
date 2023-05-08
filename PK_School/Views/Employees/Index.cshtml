@@ -1,0 +1,43 @@
+﻿@model IEnumerable<PK_School.Models.Employee>
+@{
+	ViewData["title"] = "Index";
+}
+<h1 class="text-center bg-primary">Employee List</h1>
+<p>
+	<a class=" btn btn-outline-primary shadow" asp-action="Create" asp-controller="Employees">Create New</a>
+</p>
+<div class="container shadow">
+	<p class="text-center text-success">@TempData["error"]</p>
+	<div class="col card">
+		
+		<table class="table table-bordered">
+			<thead >
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>City</th>
+					<th>State</th>
+					<th>Salary</th>					
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td>@item.Id</td>
+						<td>@item.Name</td>
+						<td>@item.City</td>
+						<td>@item.State</td>
+						<td>@item.Salary</td>
+						<td>
+
+							<a class=" btn btn-outline-primary shadow" asp-action="Edit" asp-controller="Employees" asp-route-id="@item.Id">Edit</a> |
+							<a class=" btn btn-outline-danger shadow" asp-action="Delete" asp-controller="Employees" asp-route-id="@item.Id">Delete</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>

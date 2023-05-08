@@ -1,0 +1,43 @@
+﻿@model PK_School.Models.Employee
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-center text-primary">Add Employee</h1>
+                    <p class="text-center text-danger">@TempData["message"]</p>
+                    <div class="card-body">
+                        <form method="post" asp-action="Create">
+                            <div class="form-group">
+                                <label  asp-for="Name" ></label>
+                                <input type="text" class="form-control" placeholder="Please Enter your name" asp-for="Name" />
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="City"></label>
+                                <input type="text" class="form-control" placeholder="Please Enter your city" asp-for="City" />
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="State"></label>
+                                <input type="text" class="form-control" placeholder="Please Enter your state" asp-for="State" />
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Salary"></label>
+                                <input type="text" class="form-control" placeholder="Please Enter your salary" asp-for="Salary" />
+                            </div>
+                             <div class="form btn-group ">
+                                <input type="submit"  value="submit" class="btn btn-outline-success shadow float-lg-right"  />
+                             </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
